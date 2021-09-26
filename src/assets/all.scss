@@ -1,0 +1,9 @@
+// 1. 首先包含函数（以便您可以操作颜色、SVG、计算等）
+@import "~bootstrap/scss/functions";
+// 2. 在此处包含任何默认变量覆盖 - 修改到我們自己定義的檔案
+// 3. 包括所需的 Bootstrap 样式表的其余部分
+@import "./helpers/variables";
+@import "~bootstrap/scss/mixins";
+
+// All
+@import "~bootstrap/scss/bootstrap";
