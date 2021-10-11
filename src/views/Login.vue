@@ -1,4 +1,5 @@
 <template>
+  <Loading :active="isLoading"></Loading>
   <div class="container mt-5">
     <form class="row justify-content-center">
       <div class="col-md-6">
@@ -49,15 +50,18 @@ export default {
         username: "",
         password: "",
       },
+      isLoading: false,
     };
   },
   methods: {
     signIn() {
+      this.isLoading = true;
       const api = `${process.env.VUE_APP_API}/admin/signin`;
       this.$http.post(api, this.user).then((res) => {
         const { token, expired } = res.data;
         document.cookie = `hexToken=${token}; expires=${new Date(expired)};`;
         console.log(res);
+        this.isLoading = false;
         this.$router.push("/dashboard/products");
       });
     },

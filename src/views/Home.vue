@@ -16,6 +16,7 @@ export default {
   },
   created() {
     console.log(process.env.VUE_APP_API, process.env.VUE_APP_PATH);
+    this.$router.push("/login");
   },
 };
 </script>
